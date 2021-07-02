@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.line-container{
+    margin: 20px;
+}
+
+.line{
+    background-color: black;
+    width: 11px;
+    height: 2px;
+    transform: translateX(10px -10px);
+    transition: 1s ease-out;
+
+}
+
+.line::before{
+    position: absolute;
+    content: " ";
+    width: 15px;
+    background-color: black;
+    height: 2px;
+    transform: translateY(-5px);
+    transform: rotate(45deg);
+}
+
+.line::after{
+    position: absolute;
+    content: " ";
+    width: 15px;
+    background-color: black;
+    height: 2px;
+    transform: translateY(5px);
+    animation: before 4s forwards;
+
+@keyframes before () {
+    100% {
+        transform: rotate(45deg);
+    }
+}
